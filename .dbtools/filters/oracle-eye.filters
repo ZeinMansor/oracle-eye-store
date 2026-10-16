@@ -1,0 +1,6 @@
+/* Oracle Eye tracked-object policy v1. This file is generated and versioned. */
+object_type in ('TABLE', 'INDEX', 'PACKAGE', 'PACKAGE BODY', 'PROCEDURE', 'FUNCTION',
+                'VIEW', 'TRIGGER', 'SEQUENCE', 'SYNONYM', 'TYPE', 'TYPE BODY'),
+export_type not in ('TABLES_DML', 'USER_SYS_PRIVS', 'USER_ROLE_PRIVS', 'USER', 'ALL_USERS',
+                    'ALL_MVIEW_LOGS', 'ALL_QUEUE_TABLES', 'ALL_QUEUES', 'APEX_APPLICATIONS',
+                    'ORDS_SCHEMA', 'APEX', 'ALL_TAB_PRIVS')

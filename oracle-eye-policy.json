@@ -1,0 +1,9 @@
+{
+  "policyVersion": 1,
+  "tableData": false,
+  "physicalStorage": false,
+  "trackedObjectTypes": [
+    "TABLE", "INDEX", "PACKAGE", "PACKAGE BODY", "PROCEDURE", "FUNCTION",
+    "VIEW", "TRIGGER", "SEQUENCE", "SYNONYM", "TYPE", "TYPE BODY"
+  ]
+}
