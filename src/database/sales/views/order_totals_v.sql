@@ -4,7 +4,8 @@ create or replace force editionable view sales.order_totals_v (
     customer,
     order_date,
     status,
-    total
+    total,
+    total_with_vat
 ) as
     select
         o.order_id,
@@ -15,7 +16,8 @@ create or replace force editionable view sales.order_totals_v (
         nvl(
             sum(l.quantity * l.unit_price),
             0
-        )      as total
+        )      as total,
+        round(nvl(sum(l.quantity * l.unit_price), 0) * 1.11, 2) as total_with_vat
     from
              orders o
         join customers   c on c.customer_id = o.customer_id

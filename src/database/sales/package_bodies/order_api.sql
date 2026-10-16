@@ -63,7 +63,7 @@ create or replace package body sales.order_api as
         if sql%rowcount = 0 then
             raise_application_error(-20001, 'Order '
                                             || p_order_id
-                                            || ' is not NEW');
+                                            || ' cannot be confirmed: it is not NEW');  -- clearer message for the UI
         end if;
 
     end confirm;
