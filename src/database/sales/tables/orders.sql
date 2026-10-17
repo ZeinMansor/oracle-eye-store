@@ -3,7 +3,8 @@ create table sales.orders (
     customer_id number not null enable,
     order_date  date default sysdate not null enable,
     status      varchar2(12 byte) default 'NEW' not null enable,
-    amount      number
+    amount      number,
+    discount_pct number(5, 2)
 );
 
 alter table sales.orders

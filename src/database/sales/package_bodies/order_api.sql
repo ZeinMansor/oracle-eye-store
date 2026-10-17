@@ -68,5 +68,19 @@ create or replace package body sales.order_api as
 
     end confirm;
 
+    procedure apply_discount (
+        p_order_id     in number,
+        p_discount_pct in number
+    ) is
+    begin
+        if p_discount_pct not between 0 and 100 then
+            raise_application_error(-20002, 'Discount must be between 0 and 100');
+        end if;
+        update orders
+        set discount_pct = p_discount_pct
+        where order_id = p_order_id
+          and status in ('NEW', 'CONFIRMED');
+    end apply_discount;
+
 end order_api;
 /
