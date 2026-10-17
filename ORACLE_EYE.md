@@ -29,6 +29,13 @@ branch with the result, and lists what still needs attention:
 Run `git pull` after each check to get Oracle Eye's commit. The final check must have nothing left to
 resolve. Oracle Eye then tags the commit `oracle-eye/<key>/final`.
 
+## Features whose source of truth is the branch
+
+For these, Oracle Eye exports the feature's schemas from DEV into the branch when the feature starts, and
+never commits to it again. Edit, compile in DEV, commit, and push; then capture the final check. Oracle
+Eye deploys exactly the objects the branch changed since that export, after checking that DEV holds each
+one as pushed. Objects changed only in DEV are left out.
+
 ## Rules
 
 - Change a table by editing its `CREATE TABLE` file in place **and** running the matching `ALTER TABLE` in
