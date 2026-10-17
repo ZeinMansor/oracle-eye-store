@@ -4,8 +4,7 @@ create table sales.customers (
     name         varchar2(100 byte) not null enable,
     country_code varchar2(2 byte) not null enable,
     credit_limit number(12, 2) default 0 not null enable,
-    created_at   date default sysdate not null enable,
-    notes        varchar2(400 byte)
+    created_at   date default sysdate not null enable
 );
 
 alter table sales.customers
