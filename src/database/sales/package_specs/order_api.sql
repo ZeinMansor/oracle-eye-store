@@ -14,5 +14,11 @@ create or replace package sales.order_api as
         p_order_id in number
     );
 
+    -- Sets the discount of an order that is not shipped yet (percent, 0 to 100).
+    procedure apply_discount (
+        p_order_id     in number,
+        p_discount_pct in number
+    );
+
 end order_api;
 /
